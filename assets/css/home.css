@@ -1,0 +1,119 @@
+.outerDiv {
+    position: relative;
+    height: calc(100vh - 68px);
+}
+
+.adminPass {
+    margin-top: -45px;
+}
+
+/* Submit button of admin Pass */
+.submitHomeButton {
+    border: 1px solid black;
+    background-color: #FFFF8F;
+    color: black;
+    border-radius: 15px;
+}
+
+.submitHomeButton:hover {
+    background-color: #FAD5A5;
+}
+
+/* Home boxx */
+.home-box {
+    display: inline-block;
+    width: 50vw;
+    height: 100%;
+    padding-top: 6px;
+}
+
+.home-box_2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.home-box_3{
+    margin-left:calc(50% - 25vw) ;
+}
+.heading_style>img {
+    display: inline;
+    height: 35px;
+}
+
+.heading_style small {
+    position: relative;
+    left: 20px;
+    top: 5px;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.adminPass>form>input {
+    outline: none;
+    border: 1px solid rgb(11, 100, 132);
+    border-radius: 7px;
+}
+
+/* Here the user can review the co-employee, if admin assign to him */
+.reviewBox {
+    width: 95%;
+    padding: 5px;
+    height: calc(100% - 55px);
+    background-color: #9CA6B8;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-left: 10px;
+    overflow-y: scroll;
+}
+
+.reviewBox::-webkit-scrollbar {
+    display: none;
+}
+
+.outerBox {
+    position: relative;
+    height: 150px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #b2bbcd;
+}
+
+/* class of form , so that we can take it's content, and store it is mongooes */
+
+.outerBox img{
+  position: relative;
+  top: 5px;
+  left: 37px;
+  height: 30px;
+  width: 30px;
+}
+.outerBox h6{
+    position: absolute;
+    top: 0;
+    left: 50px;
+    font-size: 20px;
+    margin: 10px 0 -10px 15px;
+}
+.outerBox button {
+    position: absolute;
+    font-size: 18px;
+    bottom: 16px;
+    right: 24px;
+}
+
+.formClass {
+    width: calc(100% - 70px);
+    margin: 10px;
+    height: 100px;
+}
+.card {
+    width: calc(100% - 40px);
+    border: 1px solid black;
+    background-color: #ffff66;
+    border-radius: 5px;
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+.card-content {
+    white-space: pre-line;
+}

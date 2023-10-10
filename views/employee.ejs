@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="/css/admin.css">
+
+<h5 class="text-center mt-3">All Employees List</h5>
+
+<div class="container mt-4">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">S.No.</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email/View Review</th>
+        <th scope="col">isAdmin</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(let i=0; i<employes.length; i++) {%>
+        <tr>
+          <th scope="row">
+            <%= i+1 %>
+          </th>
+          <td>
+            <%= employes[i].name%>
+          </td>
+          <td> <a href="/admin/viewEmployeeReviews/<%= employes[i]._id %>">
+              <%= employes[i].email%>
+            </a></td>
+          <td>
+            <% if( employes[i].isAdmin) { %>
+              <small style="color: green; font-weight: 800;">YES</small>
+              <% }else{ %>
+                <small style="color: crimson; font-weight: 800;">NO</small>
+                <% } %>
+          </td>
+          <% if(locals.user.id !=employes[i]._id && employes[i].email != "admin@gmail.com" ) {%>
+            <td>
+              <a href="/admin/deleteEmployee/<%= employes[i]._id %>" style="color: crimson;font-weight: 800;"
+                class="btn btn-md">Delete <i class="bi bi-trash3"></i></a>
+            </td>
+            <%}else{ %>
+              <td>
+                <a href="" class="btn btn-md" style="color: crimson;font-weight: 800;"><s>Delete <i
+                      class="bi bi-trash3"></i></s></a>
+              </td>
+              <%}%>
+        </tr>
+        <%}%>
+    </tbody>
+  </table>
+</div>

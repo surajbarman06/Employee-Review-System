@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="/css/home.css">
+
+<body>
+    <%if(locals.user){%>
+
+        <div class="outerDiv">
+
+            <div class="home-box home-box_3">
+                <div class="heading_style"><img src="/images/rating.png"><small>
+                        <%= employee.name %>'s reviews
+                    </small></div>
+
+                <div class="reviewBox">
+                    <% if(reviews.length != 0){ %>
+                        <% for(let review of reviews ) {%>
+                            <div class="card">
+                                <h5 class="cls-txt">Review: <%= review.content %>
+                                </h5>
+                                <p class="cls-txt">Review by: <%= review.reviewBy_name %>
+                                </p>
+    
+                            </div>
+                            <%}%>
+                    <% }else{ %>
+                        <div class="card">
+                            <h5 class="cls-txt">Review: no any review given to [<%= employee.name %>]
+                            </h5>
+                        </div>
+                   <% } %>
+                    
+                </div>
+            </div>
+
+        </div>
+        <%}%>
+</body>

@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="/css/home.css">
+
+<body>
+    <%if(locals.user){%>
+        <div class="outerDiv">
+            <!-- the text part -->
+
+            <div class="home-box">
+
+                <div class="heading_style"><img src="/images/rating.png">
+                    <small>Kindly, review your co-employees</small>
+                </div>
+
+                <div class="reviewBox">
+
+                    <% for(let i=0 ;i<recipient.length ; i++ ) { %>
+
+                        <%if(recipient[i] != null) {%>
+                            <div class="outerBox">
+                                <img src="/images/write_review.png" alt="">
+                                <h6>
+                                   Give a Review To: <%= recipient[i].name%>
+                                </h6>
+                                <div class="innerBox">
+                                    <form action="/reviews/newReview/<%= recipient[i]._id %>" method="POST">
+                                        <textarea class="formClass"
+                                            placeholder="Could you please provide a review on the performance of{<%= recipient[i].name%>}"
+                                            name="newReview" rows="5"></textarea>
+                                        <br>
+                                        <button type="submit" class="submitHomeButton"><i
+                                                class="bi bi-send-check"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                            <%}%>
+                                <%}%>
+                </div>
+            </div>
+
+            <div class="home-box home-box_2">
+                <div class="heading_style"><img src="/images/rating.png"><small>My Reviews</small></div>
+
+                <div class="reviewBox">
+
+                        <% for(let review of reviews ) {%>
+                            <div class="card">
+                                <h5 class="cls-txt card-content">Review: <%= review.content %>
+                                </h5>
+                                <p class="cls-txt">Review by: <%= review.name %>
+                                </p>
+
+                            </div>
+                            <%}%>
+                </div>
+            </div>
+            <%}%>
+        </div>
+</body>
+
+</html>

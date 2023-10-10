@@ -1,0 +1,57 @@
+<link rel="stylesheet" href="/css/admin.css">
+
+    <div class="heading">Ask for Review of any Employee ( <i>by all Employees</i>)</div>
+
+    <div class="Container">
+
+        <div class="text-center">Select the Recipient Employee</div>
+        <hr>
+
+        <form method="POST" action="/admin/setReviewers">
+
+            
+                <select class="select_option" name="employee">
+                    <option selected>Select an Employee</option>
+                    <% for(let i=0; i<employee.length ; i++){ %>
+
+                        <option value="<%=employee[i].id %>">
+                            <%= employee[i].name %>
+                        </option>
+
+                        <%}%>
+                </select>
+
+
+            <div class="submitButtons">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+
+    </div>
+
+    <div class="Container">
+
+        <div class="text-center">Make an Admin</div>
+        <hr>
+
+        <form method="POST" action="/admin/newAdmin">
+
+            <select class="select_option" name="employee">
+                
+                <option selected>Select to make an Admin</option>
+
+                <% for(let i=0; i<employee.length ; i++){ %>
+
+                    <option value="<%=employee[i]._id %>">
+                        <%= employee[i].name %>
+                    </option>
+
+                    <%}%>
+            </select>
+
+            <div class="submitButtons">
+                <button type="submit">Submit</button>
+            </div>
+
+        </form>
+</div>
